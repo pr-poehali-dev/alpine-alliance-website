@@ -206,18 +206,24 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: 'Smart Banking Platform', category: 'Финтех', year: '2024' },
-              { title: 'Industrial IoT Network', category: 'Промышленность', year: '2024' },
-              { title: 'Green Production System', category: 'Производство', year: '2023' },
-              { title: 'City Infrastructure AI', category: 'Умный город', year: '2024' },
-              { title: 'Supply Chain Automation', category: 'Логистика', year: '2023' },
-              { title: 'Digital Twin Platform', category: 'Технологии', year: '2024' }
+              { title: 'Zürich Sky Tower', category: 'Строительство', year: '2025', desc: 'Самое высокое здание в Цюрихе' },
+              { title: 'Swiss Nuclear Initiative', category: 'Ядерная промышленность', year: '2024', desc: 'Современная атомная энергетика' },
+              { title: 'Alpine Mobile Devices', category: 'Электроника', year: '2024', desc: 'Смартфоны и планшеты швейцарского качества' },
+              { title: 'Swiss Automotive Engineering', category: 'Автопром', year: '2025', desc: 'Разработка электромобилей и систем' },
+              { title: 'Alpine Processors', category: 'Микроэлектроника', year: '2024', desc: 'Производство процессоров нового поколения' },
+              { title: 'Smart Banking Platform', category: 'Финтех', year: '2024', desc: 'Цифровые банковские решения' },
+              { title: 'Industrial IoT Network', category: 'Промышленность', year: '2024', desc: 'Интернет вещей для производства' },
+              { title: 'City Infrastructure AI', category: 'Умный город', year: '2024', desc: 'ИИ для городской инфраструктуры' },
+              { title: 'Digital Twin Platform', category: 'Технологии', year: '2024', desc: 'Цифровые двойники объектов' }
             ].map((project, idx) => (
               <Card key={idx} className="bg-gray-900 border-gray-800 hover:border-accent transition-all group overflow-hidden">
-                <div className="h-48 bg-gradient-to-br from-accent/20 to-transparent"></div>
+                <div className="h-48 bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center">
+                  <Icon name={idx === 0 ? 'Building2' : idx === 1 ? 'Atom' : idx === 2 ? 'Smartphone' : idx === 3 ? 'Car' : idx === 4 ? 'Cpu' : 'Code2'} className="text-accent/40 group-hover:text-accent/70 transition-colors" size={64} />
+                </div>
                 <div className="p-6">
                   <div className="text-accent text-sm font-medium mb-2">{project.category} • {project.year}</div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors mb-2">{project.title}</h3>
+                  <p className="text-gray-400 text-sm">{project.desc}</p>
                 </div>
               </Card>
             ))}
