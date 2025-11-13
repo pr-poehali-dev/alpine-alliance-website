@@ -206,7 +206,7 @@ export default function Index() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: 'Zürich Sky Tower', category: 'Строительство', year: '2025', desc: 'Самое высокое здание в Цюрихе', icon: 'Building2' },
+              { title: 'Zürich Sky Tower', category: 'Строительство', year: '2025', desc: 'Самое высокое здание в Цюрихе', icon: 'Building2', image: 'https://cdn.poehali.dev/files/2adcd66e-f307-4de8-9462-2bba66521c15.jpg' },
               { title: 'Swiss Nuclear Initiative', category: 'Ядерная промышленность', year: '2024', desc: 'Современная атомная энергетика', icon: 'Atom' },
               { title: 'Alpine Crypto Exchange', category: 'Криптовалюта', year: '2024', desc: 'Швейцарская криптобиржа и блокчейн-решения', icon: 'Bitcoin' },
               { title: 'Alpine Mobile Devices', category: 'Электроника', year: '2024', desc: 'Смартфоны и планшеты швейцарского качества', icon: 'Smartphone' },
@@ -217,9 +217,20 @@ export default function Index() {
               { title: 'City Infrastructure AI', category: 'Умный город', year: '2024', desc: 'ИИ для городской инфраструктуры', icon: 'Brain' }
             ].map((project, idx) => (
               <Card key={idx} className="bg-gray-900 border-gray-800 hover:border-accent transition-all group overflow-hidden">
-                <div className="h-48 bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center">
-                  <Icon name={project.icon} className="text-accent/40 group-hover:text-accent/70 transition-colors" size={64} />
-                </div>
+                {project.image ? (
+                  <div className="h-48 relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+                  </div>
+                ) : (
+                  <div className="h-48 bg-gradient-to-br from-accent/20 to-transparent flex items-center justify-center">
+                    <Icon name={project.icon} className="text-accent/40 group-hover:text-accent/70 transition-colors" size={64} />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="text-accent text-sm font-medium mb-2">{project.category} • {project.year}</div>
                   <h3 className="text-xl font-bold text-white group-hover:text-accent transition-colors mb-2">{project.title}</h3>
