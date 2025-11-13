@@ -16,11 +16,12 @@ export default function Index() {
       <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-accent/20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-accent flex items-center justify-center">
-                <span className="text-black font-bold text-xl">AA</span>
-              </div>
-              <span className="text-white font-bold text-xl tracking-tight">Alpine Alliance</span>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="https://cdn.poehali.dev/files/779f01a1-d24e-4435-a794-e0dd58a208a6.png" 
+                alt="Alpine Alliance Logo" 
+                className="h-16 w-auto"
+              />
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -255,11 +256,12 @@ export default function Index() {
       <footer className="bg-black text-white py-12 px-6 lg:px-8 border-t border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-accent flex items-center justify-center">
-                <span className="text-black font-bold text-xl">AA</span>
-              </div>
-              <span className="text-white font-bold text-xl">Alpine Alliance</span>
+            <div className="flex items-center space-x-4">
+              <img 
+                src="https://cdn.poehali.dev/files/779f01a1-d24e-4435-a794-e0dd58a208a6.png" 
+                alt="Alpine Alliance Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             
             <div className="text-gray-400 text-sm">
